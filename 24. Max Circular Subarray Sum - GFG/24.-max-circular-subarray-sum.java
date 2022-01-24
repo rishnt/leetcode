@@ -27,24 +27,34 @@ class Main {
 
 
 class Solution{
-
-    // a: input array
+ // a: input array
     // n: size of array
     //Function to find maximum circular subarray sum.
     static int circularSubarraySum(int a[], int n) {
-       /* if(n==1){
+       if(n==1){
             return a[0];
         }
+        boolean start=allNegative(a,n);
+        if(start==true){
         int sum=0;
         for(int i=0;i<n;i++){
             sum+=a[i];
         }
         int k=kadane(a,n);
-      
         int rk=reverseKadane(a,n);
         rk=rk+sum;
         
         return Math.max(k,rk);
+        }
+        else{
+            int min=0;
+           int min1=Integer.MIN_VALUE;
+            for(int i=0;i<n;i++){
+                min=a[i];
+                min1=Math.max(min1,min);
+            }
+                return min1;
+        }
         }
        
           // int k=kadane(a,n);
@@ -55,7 +65,6 @@ class Solution{
           
         
         //return Integer.max(kadane(a,n), reverseKadane(a,n));
-    
    static int kadane(int a[],int n){
             int sum=0;
             int maxsum=0;
@@ -71,16 +80,14 @@ class Solution{
               }
                return maxsum;
           }
-          
-          
-       static   int reverseKadane(int a[],int n){
+    static   int reverseKadane(int a[],int n){
           /* int sum=0;
            int sum2=0;
            for(int i=0;i<n;i++)
            {
                sum+=a[i];
            }*/
-              /* for(int i=0;i<n;i++)
+               for(int i=0;i<n;i++)
                {
                    a[i]=-a[i];
                   }
@@ -97,32 +104,17 @@ class Solution{
                        sum1=0;
                    }
                }
-             
-              return maxsum1;*/
-              
-              int max = a[0], max_1 = a[0];
-	int first_ele_pos = 0;
-
-	for (int i = 1; i < 2 * (n - 1); i++) {
-		int index = (i > n - 1) ? i % n : i;
-		if (first_ele_pos == index) {
-			index = first_ele_pos + 1;
-			index = (index > n - 1) ? index % n : index;
-			i = index;
-			max_1 = a[index];
-			first_ele_pos = index;
-			continue;
-		}
-		if (max_1 > 0)
-			max_1 += a[index];
-		else {
-			max_1 = a[index];
-			first_ele_pos = index;
-		}
-		if (max_1 > max)
-			max = max_1;
-	}
-	return max;
-         }
+           return maxsum1;
+           
+          
+       }
+       static boolean allNegative(int a[],int n){
+           boolean flag;
+           for(int i=0;i<n;i++){
+               if(a[i]>0)
+                   return true;
+           }
+           return false;
+       }
  }
 
