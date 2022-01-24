@@ -59,9 +59,6 @@ class Solution{
             j++;
         }
         hash[key] =arr[i];
-        
-    
-    
-    }
+   }
 }
 }
