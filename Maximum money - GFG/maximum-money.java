@@ -25,10 +25,16 @@ class GFG {
 
 class Solution {
     static int maximizeMoney(int N , int K) {
-        int sum=0;
-        for(int i=0;i<N;i+=2){
-            sum=sum+K;
-        }
-        return sum;
+       int pro=1;
+       int S;
+       if(N%2==0){
+           S=N/2;
+           pro=S*K;
+       }
+       else{
+           S=(N/2)+1;
+           pro=S*K;
+       }
+        return pro;
     }
 };
