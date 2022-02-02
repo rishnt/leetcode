@@ -62,20 +62,20 @@ class Node {
 class Solution {
     
     public Node insertInMid(Node head, int data){
-    
+     int c=0;
       Node curr=head;
-       float c=0;
+      
       while(curr!=null){
           c++;
           curr=curr.next;}
           int pos=0;
-      /*if(c%2!=0){
+      if(c%2!=0){
           pos=(c+1)/2;
       }
       else{
           pos=c/2;
-      }*/
-        pos=(int)Math.ceil(c/2);
+      }
+       // pos=(int)Math.ceil(c/2);
     
        curr=head;
       for(int i=1;i<=pos-1;i++){
