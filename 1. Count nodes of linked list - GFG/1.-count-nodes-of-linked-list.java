@@ -24,13 +24,13 @@ class Solution
 {
     //Function to count nodes of a linked list.
     public static int getCount(Node head)
-    {int c=0;
-      Node ptr=head;
-      while(ptr!=null){
-          c++;
-          ptr=ptr.next;
-      }
-      return c;
+    {int count=0;
+    Node curr=head;
+    while(curr!=null){
+        count++;
+        curr=curr.next;
+    }
+    return count;
     }
 }
     
