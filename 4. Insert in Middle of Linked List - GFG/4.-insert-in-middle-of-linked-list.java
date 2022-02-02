@@ -62,8 +62,9 @@ class Node {
 class Solution {
     
     public Node insertInMid(Node head, int data){
-   /*   int c=0;
+    
       Node curr=head;
+       float c=0;
       while(curr!=null){
           c++;
           curr=curr.next;}
@@ -73,31 +74,17 @@ class Solution {
       }
       else{
           pos=c/2;
-      }
+      }*/
         pos=(int)Math.ceil(c/2);
     
-      Node temp=head;
-      for(int i=0;i<=pos-1;i++){
-          temp=temp.next;
+       curr=head;
+      for(int i=1;i<=pos-1;i++){
+          curr=curr.next;
       }
       Node t=new Node(data);
-      t.next=temp.next;
-      temp.next=t;
-      return head;*/
-      Node curr=head;
-       float len=0;
-       while(curr!=null){
-           len=len+1;
-           curr=curr.next;
-       }int mid=0;
-       
-           mid=(int)Math.ceil(len/2);
-           curr=head;
-           for(int i=1;i<=mid-1;i++){
-               curr=curr.next;
-           }Node t=new Node(data);
-           t.next=curr.next;
-           curr.next=t;
-           return head;
+      t.next=curr.next;
+      curr.next=t;
+      return head;
+    
     }
 }
