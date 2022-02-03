@@ -117,10 +117,13 @@ class GfG
 	         }
 	     }
 	     if(curr.next!=null){
+	      // temp.next=curr.next;
+	       //curr.next.prev=temp;
+	       //curr.next=temp;
+	       //temp.prev=curr;
 	       temp.next=curr.next;
-	       curr.next.prev=temp;
 	       curr.next=temp;
-	       temp.prev=curr;
+	       
 	     }
 	     else{
 	         temp.prev=curr;
