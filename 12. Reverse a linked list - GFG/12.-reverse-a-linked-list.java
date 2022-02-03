@@ -69,11 +69,14 @@ class Solution
     //Function to reverse a linked list.
     Node reverseList(Node head)
     {
-         if(head == null)
-           return head;
-       
-       reverseList(head.next);
-       System.out.print(head.data + " ");
-       return null;
+        Node curr=head;
+        Node prev=null;
+        while(curr!=null){
+            Node temp=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=temp;
+        }
+        return prev;
     }
 }
