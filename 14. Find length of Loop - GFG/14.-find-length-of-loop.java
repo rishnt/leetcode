@@ -77,20 +77,18 @@ class Solution
     //Function to find the length of a loop in the linked list.
     static int countNodesinLoop(Node head)
     {
-         /*  int c=0;
+          
        Node slow=head,fast=head;
        boolean flag=false;
-       while(fast!=null&&fast.next.next!=null){
+       while(slow!=null&&fast!=null&&fast.next!=null){
            slow=slow.next;
            fast=fast.next.next;
-           
-           
-           if(slow==fast){
+            if(slow==fast){
                flag=true;
                break;
            }
        }
-  
+              int c=0;
        if(flag==true){
            slow=slow.next;
            c++;
@@ -101,8 +99,8 @@ class Solution
        }
        
     }
-    return c;*/
-      Node slow=head,fast=head;
+    return c;
+     /* Node slow=head,fast=head;
       boolean flag=false;
       while(fast!=null&&fast.next!=null)
       {
@@ -125,6 +123,6 @@ class Solution
               slow=slow.next;
           }
       }
-      return count;
+      return count;*/
 }
 }
