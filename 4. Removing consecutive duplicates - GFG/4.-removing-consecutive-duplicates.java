@@ -26,7 +26,8 @@ class Solution
 {
     //Function to remove consecutive duplicates from given string using Stack.
     public static String removeConsecutiveDuplicates(String str)
-    {Stack<Character> st=new Stack<>();
+    {
+        Stack<Character> st=new Stack<>();
     String s="";
     for(int i=0;i<str.length();i++){
         char c=str.charAt(i);
