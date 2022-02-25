@@ -49,28 +49,26 @@ class Complete{
    
     // Function for finding maximum and value pair
     public static int multiply (int arr[], int n) {
-    int first = 0;
-        int second = 0;
-        int prod = 0;
-        int i = 0;
-        int j = n-1;
-        if(n%2 == 0){
-            while(i<j){
-                first += arr[i];
-                second += arr[j];
-                i++;
-                j--;
-            }
-        }
-        else if(n%2 == 1){
-            for(i=0 ;i<n/2; i++){
-               first += arr[i];
-           }
-            for(j=n/2 ; j<n; j++){
-               second += arr[j];
-           }  
-        }
-        return prod = first*second;
+     int i=0,product=1;
+     int j=n-1;
+     int left=0,right=0;
+     if(n%2==0){
+         while(i<j){
+             left+=arr[i];
+             right+=arr[j];
+             i++;
+             j--;
+         }
+     }
+     else if(n%2==1){
+         for(i=0;i<n/2;i++){
+             left+=arr[i];
+         }
+         for( j=n/2;j<n;j++){
+             right+=arr[j];
+         }
+     }
+     return product=left*right;
     }
   }
     
