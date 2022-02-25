@@ -65,6 +65,11 @@ class Compute
        
        for(int i=0;i<n;i++){
            mi=Math.min(mi,a[i]);
+          
+       }
+        
+       for(int i=0;i<n;i++){
+          
            ma=Math.max(ma,a[i]);
        }
        pair value=new pair(mi,ma);
