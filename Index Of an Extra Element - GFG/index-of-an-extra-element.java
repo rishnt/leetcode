@@ -20,21 +20,6 @@ class ExtraElement {
 /*Complete the function below*/
 class Solution {
     public int findExtra(int a[], int b[], int n) {
-        int sum1=0;
-        int sum2=0;
-        int k=0;
-for(int i=0;i<n;i++){
-  sum1+=a[i];
-}
-for(int j=0;j<n-1;j++){
-    sum2+=b[j];
-}
-int ind=sum1-sum2;
-for(int i=0;i<n;i++){
-    if(a[i]==ind)
-        k=i;
-    
-}
-      return k;  
+         
     }
 }
