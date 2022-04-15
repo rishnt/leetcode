@@ -28,31 +28,15 @@ class GFG {
 
 class Solution {
     int MissingNumber(int array[], int n) {
-     /*   int tep;
-      for(int i=0;i<n;i++){
-          int current=array[i]-1;
-          if(array[i]!=array[current]){
-              tep=array[i];
-              array[i]=array[current];
-              array[current]=tep;
-          }
-          
-      }
-      for(int i=0;i<n;i++){
-          if(array[i]!=i){
-              return i;
-          }
-      }
-      return -1;*/
-      
-      int sum=0;
-     int sum1=0;
-      for(int i=0;i<=n;i++){
-          sum+=i;
-      }
-      for(int i=0;i<n-1;i++){
-          sum1+=array[i];
-      }
-      return sum-sum1;
+    int sum=0;
+    int sum1=0;
+    for(int i=0;i<n+1;i++){
+       sum+=i;
+    }
+    for(int i=0;i<n-1;i++){
+        sum1+=array[i];
+    }
+    
+    return sum-sum1;
     }
 }
