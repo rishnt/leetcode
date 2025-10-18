@@ -1,4 +1,4 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/triangle-number-1661489840/1?page=3&difficulty=Basic&status=unsolved&sortBy=submissions">Pattern 6</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Geek is very fond of patterns. Once, his teacher gave him a&nbsp;&nbsp;pattern to solve. He gave Geek&nbsp;an integer n and asked him to build a pattern.</span></p>
+<h2><a href="https://www.geeksforgeeks.org/problems/triangle-number-1661489840/1">Pattern 6</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Geek is very fond of patterns. Once, his teacher gave him a&nbsp;&nbsp;pattern to solve. He gave Geek&nbsp;an integer n and asked him to build a pattern.</span></p>
 
 <p><span style="font-size:18px">Help Geek to&nbsp;build a&nbsp;pattern.</span></p>
 
