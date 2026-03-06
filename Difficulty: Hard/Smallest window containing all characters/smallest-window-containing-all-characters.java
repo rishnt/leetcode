@@ -1,41 +1,56 @@
 class Solution {
     public static String minWindow(String s, String p) {
-      int[]cnt=new int[128];
+      int len1 = s.length();
+        int len2 = p.length();
 
-    int req=p.length(),left=-1,min=s.length()+1;
+        if (len1 < len2)
+            return "";
 
-    for(char c:p.toCharArray()){
+        int[] countP = new int[256];
+        int[] countS = new int[256];
 
-        ++cnt[c];
+        // Store occurrence of characters of P
+        for (int i = 0; i < len2; i++)
+            countP[p.charAt(i)]++;
 
-    }
+        int start = 0, start_idx = -1, min_len = Integer.MAX_VALUE;
+        int count = 0;
 
-    for(int l=0,r=0;r<s.length();r++){
+        for (int j = 0; j < len1; j++) {
+            char currChar = s.charAt(j);
+            
+            // Count occurrence of characters of string S
+            countS[currChar]++;
 
-        if(--cnt[s.charAt(r)]>=0)
-
-        --req;
-
-        while(req==0){
-
-            if(r-l+1<min){
-
-                left=l;
-
-                min=r-l+1;
-
+            // If S's char matches with P's char, increment count
+            if (countP[currChar] > 0 && countS[currChar] <= countP[currChar]) {
+                count++;
             }
 
-            if(++cnt[s.charAt(l++)]>0)
+            // If all characters are matched
+            if (count == len2) {
+                
+                // Try to minimize the window
+                char startChar;
+                while (countS[startChar = s.charAt(start)] > countP[startChar] || countP[startChar] == 0) {
+                    if (countS[startChar] > countP[startChar]) {
+                        countS[startChar]--;
+                    }
+                    start++;
+                }
 
-            ++req;
-
+                // Update window size
+                int len = j - start + 1;
+                if (min_len > len) {
+                    min_len = len;
+                    start_idx = start;
+                }
+            }
         }
 
-    }
+        if (start_idx == -1)
+            return "";
 
-    
-
-      return left==-1?"":s.substring(left,left+min);
+        return s.substring(start_idx, start_idx + min_len);
     }
 }
