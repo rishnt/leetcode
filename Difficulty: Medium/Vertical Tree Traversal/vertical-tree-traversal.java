@@ -13,14 +13,15 @@ class Node {
 */
 
 class Solution {
-        static class NodeInfo {
+    
+      static class NodeInfo {
         Node node;
         int col;
         NodeInfo(Node n, int c) { node = n; col = c; }
-    }
+      }
     public ArrayList<ArrayList<Integer>> verticalOrder(Node root) {
         // code here
-            ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+              ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         if (root == null) return res;
 
         Map<Integer, ArrayList<Integer>> colMap = new HashMap<>();
